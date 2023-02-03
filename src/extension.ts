@@ -4,7 +4,7 @@ import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('angular-navigator.switchTo', async () => {
-		const uriString = vscode.window.activeTextEditor?.document.uri.path;
+		const uriString = vscode.window.activeTextEditor?.document.uri.fsPath;
 
 		if (uriString === undefined) {
 			vscode.window.showInformationMessage('No file opened!');
