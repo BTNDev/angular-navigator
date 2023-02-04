@@ -14,6 +14,17 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "Angular Navigator",
+      "properties": {
+        "angular-navigator.enableButton": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Angular Navigator button on editor toolbar",
+          "scope": "resource"
+        }
+      }
+    },
     "commands": [
       {
         "command": "angular-navigator.switchTo",
@@ -21,12 +32,16 @@
         "icon": "$(arrow-swap)"
       }
     ],
+    "keybindings": {
+      "command": "angular-navigator.switchTo",
+      "key": "shift+a"
+    },
     "menus": {
       "editor/title": [
         {
           "command": "angular-navigator.switchTo",
           "group": "navigation",
-          "when": "resourceFilename =~ /.component.ts$/ || resourceFilename =~ /.component.html$/ || resourceFilename =~ /.component.css$/ || resourceFilename =~ /.component.spec.ts$/"
+          "when": "config.angular-navigator.enableButton && resourceFilename =~ /.component.ts$/ || config.angular-navigator.enableButton && resourceFilename =~ /.component.css$/ || config.angular-navigator.enableButton && resourceFilename =~ /.component.html$/ || config.angular-navigator.enableButton && resourceFilename =~ /.component.spec.ts$/"
         }
       ]
     }
