@@ -34,9 +34,18 @@ export function activate(context: vscode.ExtensionContext) {
 		const targetToOpen = join(path.dir, result);
 
 		try {
+			const desiredTabIndex = vscode.window.tabGroups.activeTabGroup.tabs.findIndex((tab) => tab.isActive);
 			const doc = await vscode.workspace.openTextDocument(targetToOpen);
 			vscode.commands.executeCommand('workbench.action.closeActiveEditor');
-			vscode.window.showTextDocument(doc, { preview: false });
+			await vscode.window.showTextDocument(doc, { preview: false });
+
+			let tabIndex = vscode.window.tabGroups.activeTabGroup.tabs.findIndex((tab) => tab.isActive);
+
+			const shift = tabIndex - desiredTabIndex;
+
+			for (let i = 0; i < shift; i++) {
+				vscode.commands.executeCommand('workbench.action.moveEditorLeftInGroup');
+			}
 		} catch (error) {
 			if (error instanceof Error) {
 				vscode.window.showInformationMessage(error.message);
