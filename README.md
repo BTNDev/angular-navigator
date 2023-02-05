@@ -1,6 +1,6 @@
 # angular-navigator README
 
-With this extension you can switch rapidly between the files belonging to an angular component. Press xy to close the active file and open an other. This way you will only have one open tab for every angular component you are working on.
+With this extension you can switch rapidly between the files belonging to an angular component. Press `shift + a` to close the active file and open an other. This way you will only have one open tab for every angular component you are working on.
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
@@ -19,9 +19,14 @@ For example:
 ## Extension Settings
 
 This extension contributes the following command:
+
 * `angular-navigator.switchTo`: Opens a dialog where you can switch to an other file belonging to the same component.
 
-This extension contributes the following settings:
+This extension contributes the following keybinding:
+
+* `shift + a` to activate switchTo command
+
+This extension contributes the following setting:
 
 * `angular-navigator.enableButton`: Enable/disable Angular Navigator button on editor toolbar.
 

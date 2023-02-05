@@ -25,6 +25,12 @@ export function activate(context: vscode.ExtensionContext) {
 				options.push(`${path.name}.${ext}`);
 			}
 		}
+
+		if (options.length === 0) {
+			vscode.window.showInformationMessage('No files found!');
+			return;
+		}
+
 		const result = await vscode.window.showQuickPick(options);
 
 		if (result === undefined) {
@@ -33,23 +39,18 @@ export function activate(context: vscode.ExtensionContext) {
 
 		const targetToOpen = join(path.dir, result);
 
-		try {
-			const desiredTabIndex = vscode.window.tabGroups.activeTabGroup.tabs.findIndex((tab) => tab.isActive);
-			const doc = await vscode.workspace.openTextDocument(targetToOpen);
-			vscode.commands.executeCommand('workbench.action.closeActiveEditor');
-			await vscode.window.showTextDocument(doc, { preview: false });
+		const desiredTabIndex = vscode.window.tabGroups.activeTabGroup.tabs.findIndex((tab) => tab.isActive);
 
-			let tabIndex = vscode.window.tabGroups.activeTabGroup.tabs.findIndex((tab) => tab.isActive);
+		const doc = await vscode.workspace.openTextDocument(targetToOpen);
+		vscode.commands.executeCommand('workbench.action.closeActiveEditor');
+		await vscode.window.showTextDocument(doc, { preview: false });
 
-			const shift = tabIndex - desiredTabIndex;
+		let tabIndex = vscode.window.tabGroups.activeTabGroup.tabs.findIndex((tab) => tab.isActive);
 
-			for (let i = 0; i < shift; i++) {
-				vscode.commands.executeCommand('workbench.action.moveEditorLeftInGroup');
-			}
-		} catch (error) {
-			if (error instanceof Error) {
-				vscode.window.showInformationMessage(error.message);
-			}
+		const shift = tabIndex - desiredTabIndex;
+
+		for (let i = 0; i < shift; i++) {
+			vscode.commands.executeCommand('workbench.action.moveEditorLeftInGroup');
 		}
 	});
 
