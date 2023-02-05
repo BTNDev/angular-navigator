@@ -2,7 +2,7 @@
   "name": "angular-navigator",
   "displayName": "Angular Navigator",
   "description": "Quickly switch between Angular files",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -13,6 +13,29 @@
     "onCommand:angular-navigator.helloWorld"
   ],
   "main": "./dist/extension.js",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BTNDev/angular-navigator.git"
+  },
+  "license": "SEE LICENSE IN license",
+  "author": {
+    "name": "BTNDev",
+    "email": "helpbtnd@gmail.com"
+  },
+  "publisher": "BTNDev",
+  "keywords": [
+    "angular",
+    "switch",
+    "navigate",
+    "file",
+    "component",
+    "components",
+    "html",
+    "css",
+    "ts",
+    "spec"
+  ],
   "contributes": {
     "configuration": {
       "title": "Angular Navigator",
