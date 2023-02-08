@@ -1,13 +1,15 @@
 # angular-navigator README
 
-With this extension you can switch rapidly between the files belonging to an angular component. Press `shift + a` to close the active file and open an other. This way you will only have one open tab for every angular component you are working on.
+With this extension you can switch rapidly between the files belonging to an angular component. Press `ctrl + shift + q` to close the active file and open an other. This way you will only have one open tab for every angular component you are working on.
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+![feature using keybinding to switch](images/feature-1.gif)
+Switching using the `ctrl + shift + q` keybinding
 
-For example if there is an image subfolder under your extension project workspace:
+<br>
 
-\!\[feature X\]\(images/feature-x.png\)
+![feature using button to switch](images/feature-2.gif)
+Switching using the button
 
 ## Requirements
 Your angular component files should be in the same folder. They have the same name followed by .components. and then the extension.
@@ -24,7 +26,7 @@ This extension contributes the following command:
 
 This extension contributes the following keybinding:
 
-* `shift + a` to activate switchTo command
+* `ctrl + shift + q` to activate switchTo command
 
 This extension contributes the following setting:
 
@@ -38,6 +40,11 @@ Calling out known issues can help limit users opening duplicate issues against y
 ### 1.0.0
 
 Initial release of angular-navigator.
+
+### 1.0.1
+
+Changed keybinding and updated readme.
+
 
 <!-- ### 1.0.1
 

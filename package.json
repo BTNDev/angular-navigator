@@ -57,7 +57,7 @@
     ],
     "keybindings": {
       "command": "angular-navigator.switchTo",
-      "key": "shift+a"
+      "key": "ctrl+shift+q"
     },
     "menus": {
       "editor/title": [
