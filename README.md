@@ -45,6 +45,9 @@ Initial release of angular-navigator.
 
 Changed keybinding and updated readme.
 
+### 1.0.1
+
+Add support for scss files.
 
 <!-- ### 1.0.1
 

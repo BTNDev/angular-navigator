@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		const options: string[] = [];
 
-		const extensions = ['ts', 'html', 'css', 'spec.ts'];
+		const extensions = ['ts', 'html', 'css', 'scss', 'spec.ts'];
 		for (let i = 0; i < extensions.length; i++) {
 			const ext = extensions[i];
 
